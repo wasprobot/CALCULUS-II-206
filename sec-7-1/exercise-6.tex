@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q --- #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A --- \textbf{#1}#2\par}}
+
+\Que{ $ \int{\cos^{-1}(x)}dx $ }
+\Ans
+{
+Let $ y = \cos^{-1}(x) $\\
+
+$\implies x = cos(y) $\\
+
+$\implies \frac{dx}{dy} = -\sin(y) $\\
+
+$\implies dx = -\sin(y) dy $\\
+
+Therefore $ \int{\cos^{-1}(x)}dx
+= \int{y(-\sin(y)dy)}$\\
+
+$= -\int{y\sin(y) dy} $\\
+
+Let $ u=y;v^{\prime}=\sin(y) $.
+Therefore $ v= -\cos(y) $\\
+
+According to integration by parts:\\
+$$\int{uv^{\prime}}=uv-\int{vu^{\prime}}$$\\
+
+Therefore $ -\int{y\sin(y) dy} $\\
+
+$= y(-\cos(y)) - \int{-\cos(y) dy}$\\
+
+$= -y\cos(y) + \int{\cos(y) dy}$\\
+
+$= -y\cos(y) + \sin(y) + C $\\
+
+$= -\cos^{-1}(x)x + \sin(cos^{-1}(x)) + C $, 
+(substituting $ y=cos^{-1}(x) $)\\
+
+$= -x\cos^{-1}(x) + \sqrt{1-x^2} + C $, 
+(substituting $ \sin(cos^{-1}(x))=sqrt{1-x^2} $)\\
+
+}
+\end{document}
