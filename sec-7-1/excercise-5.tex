@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q --- #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A --- \textbf{#1}#2\par}}
+
+\Que{ $\int{(x-1)\sin(\pi x)}dx$ }
+\Ans
+{
+
+Let $u=(x-1);v^{\prime}=\sin(\pi x)$.
+Therefore $v= -\frac{1}{\pi} \cos(\pi x)$\\
+
+According to integration by parts:\\
+$$\int{uv^{\prime}}=uv-\int{vu^{\prime}}$$\\
+
+Therefore $\int{(x-1)\sin(\pi x)}dx
+= \frac{1-x}{\pi} \cos(\pi x) - \int{-\frac{1}{\pi} \cos(\pi x)}dx$\\
+
+$= \frac{1-x}{\pi} \cos(\pi x) + \frac{1}{\pi} \int{\cos(\pi x)}dx$\\
+
+$= \frac{1-x}{\pi} \cos(\pi x) + \frac{1}{\pi^2} \sin(\pi x) + C$\\
+
+}
+\end{document}
