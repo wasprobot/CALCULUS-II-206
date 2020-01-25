@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q --- #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A --- \textbf{#1}#2\par}}
+
+\Que{ $\int{6x\cos(5x)}dx$ }
+\Ans
+{
+
+Let $u=x;v^{\prime}=\cos(5x)$. Therefore $v=\frac{1}{5}\sin(5x)$\\
+
+According to integration by parts:\\
+$$\int{uv^{\prime}}=uv-\int{vu^{\prime}}$$\\
+
+Therefore $\int{6x\cos(5x)}dx 
+= 6\int{x\cos(5x)}dx 
+= x\frac{6}{5}\sin(5x) - \int{\frac{6}{5}\sin(5x)}dx$\\
+
+$= x\frac{6}{5}\sin(5x) - \frac{6}{5}\int{\sin(5x)}dx$\\
+
+$= x\frac{6}{5}\sin(5x) + \frac{6}{25}\cos(5x) + C$\\
+
+}
+\end{document}
