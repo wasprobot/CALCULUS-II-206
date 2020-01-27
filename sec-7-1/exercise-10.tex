@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q --- #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A --- \textbf{#1}#2\par}}
+
+\Que{ $ \int{e^{5\theta}\sin(6\theta)}d\theta $ }
+\Ans
+{
+Let $ u=e^{5\theta} $ and $ v^{\prime}=\sin(6\theta) $.\\
+
+$\implies u^{\prime} = 5e^{5\theta} $ and $ v = -\frac{\cos(6\theta)}{6} $\\\\
+
+According to integration by parts:\\
+$$\int{uv^{\prime}}=uv-\int{vu^{\prime}}$$\\
+
+Therefore $ \int{e^{5\theta}\sin(6\theta)}d\theta $\\
+
+$ = \frac{-e^{5\theta}\cos(6\theta)}{6} + \frac{5}{6}\int{e^{5\theta}\cos(6\theta)} d\theta $\\\\
+
+To calculate $ \int{e^{5\theta}\cos(6\theta)} d\theta $\\
+
+Let $ u=e^{5\theta} $ and $ v^{\prime}=\cos(6\theta) $.\\
+
+$\implies u^{\prime} = 5e^{5\theta} $ and $ v = \frac{\sin(6\theta)}{6} $\\\\
+
+Therefore $ \int{e^{5\theta}\cos(6\theta)} d\theta $\\
+
+$ = \frac{e^{5\theta}\sin(6\theta)}{6} - \frac{5}{6}\int{e^{5\theta}\sin(6\theta)} d\theta $\\\\
+
+Therefore $ \int{e^{5\theta}\sin(6\theta)}d\theta $\\
+
+$ = \frac{-e^{5\theta}\cos(6\theta)}{6} + \frac{5}{6}[\frac{e^{5\theta}\sin(6\theta)}{6} - \frac{5}{6}\int{e^{5\theta}\sin(6\theta)} d\theta] $\\\\
+
+$ = \frac{-e^{5\theta}\cos(6\theta)}{6} + \frac{5}{36}e^{5\theta}\sin(6\theta) - \frac{25}{36}\int{e^{5\theta}\sin(6\theta)} d\theta $\\\\
+
+$ (1+\frac{25}{36})\int{e^{5\theta}\sin(6\theta)} d\theta = \frac{-e^{5\theta}\cos(6\theta)}{6} + \frac{5}{36}e^{5\theta}\sin(6\theta) $\\\\
+
+$ \frac{61}{36}\int{e^{5\theta}\sin(6\theta)} d\theta = \frac{-6}{36}e^{5\theta}\cos(6\theta) + \frac{5}{36}e^{5\theta}\sin(6\theta) $\\\\
+
+$ \int{e^{5\theta}\sin(6\theta)} d\theta = \frac{5}{61}e^{5\theta}\sin(6\theta) - \frac{6}{61}e^{5\theta}\cos(6\theta) + C $\\
+
+}
+\end{document}
