@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q --- #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A --- \textbf{#1}#2\par}}
+
+\Que{ $ \int{\ln(\sqrt{x})}dx $ }
+\Ans
+{
+Let $ u=\ln(\sqrt{x}) $ and $ v^{\prime}=1 $.\\
+
+$\frac{d}{dx}\ln(\sqrt{x}) = \frac{1}{\sqrt{x}}\frac{d}{dx}x^{\frac{1}{2}} $\\
+
+$ = \frac{1}{\sqrt{x}}\frac{1}{2}x^\frac{-1}{2} $\\
+
+$ = \frac{1}{2}\frac{1}{\sqrt{x}}\frac{1}{\sqrt{x}} $\\
+
+$ = \frac{1}{2x} $\\
+
+Therefore $ u^{\prime}=\frac{1}{2x} $ and $ v=x $\\
+
+According to integration by parts:\\
+$$\int{uv^{\prime}}=uv-\int{vu^{\prime}}$$\\
+
+Therefore $ \int{\ln(\sqrt{x})}dx $\\
+
+$ =\ln(\sqrt{x}) - \int{\frac{1}{2}} dx $\\
+
+$ =\ln(\sqrt{x}) - \frac{x}{2} + C $\\
+
+}
+\end{document}
