@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q --- #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A --- \textbf{#1}#2\par}}
+
+\Que{ $ \int{(\ln(x))^2}dx $ }
+\Ans
+{
+Let $ u=(\ln(x))^2 $ and $ v^{\prime}=1 $.\\
+
+$\frac{d}{dx}(\ln(x))^2 = 2\ln(x) \frac{d}{dx}\ln(x) $\\
+
+$ = \frac{2\ln(x)}{x} $\\
+
+Therefore $ u^{\prime}=\frac{2\ln(x)}{x} $ and $ v=x $\\
+
+According to integration by parts:\\
+$$\int{uv^{\prime}}=uv-\int{vu^{\prime}}$$\\
+
+Therefore $ \int{(\ln(x))^2}dx = x(\ln(x))^2 - 2\int{\ln(x)} dx $\\
+
+To calculate $ \int{\ln(x)} dx $, let $ u=\ln(x) $ and $ v^{\prime}=1 $.\\
+
+Therefore $ u^{\prime}=\frac{1}{x} $ and $ v=x $\\
+
+Therefore $ \int{\ln(x)} dx = x\ln(x) - \int{1} dx$\\
+
+$ = x\ln(x) - x + C_1 $\\
+
+Therefore $ \int{(\ln(x))^2}dx = x(\ln(x))^2 - 2[x\ln(x) - x] + C $\\
+
+$ = x(\ln(x))^2 - 2x\ln(x) + 2x + C $\\
+
+}
+\end{document}
