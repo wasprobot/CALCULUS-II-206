@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q --- #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A --- \textbf{#1}#2\par}}
+
+\Que{ $ \int{e^{8\theta}\sin(9\theta)}d\theta $ }
+\Ans
+{
+Let $ u=e^{8\theta} $ and $ v^{\prime}=\sin(9\theta) $.\\
+
+$\implies u^{\prime} = 8e^{8\theta} $ and $ v = -\frac{\cos(9\theta)}{9} $\\\\
+
+According to integration by parts:\\
+$$\int{uv^{\prime}}=uv-\int{vu^{\prime}}$$\\
+
+Therefore $ \int{e^{8\theta}\sin(9\theta)}d\theta $\\
+
+$ = \frac{-e^{8\theta}\cos(9\theta)}{9} + \frac{8}{9}\int{e^{8\theta}\cos(9\theta)} d\theta $\\\\
+
+To calculate $ \int{e^{8\theta}\cos(9\theta)} d\theta $\\
+
+Let $ u=e^{8\theta} $ and $ v^{\prime}=\cos(9\theta) $.\\
+
+$\implies u^{\prime} = 8e^{8\theta} $ and $ v = \frac{\sin(9\theta)}{9} $\\\\
+
+Therefore $ \int{e^{8\theta}\cos(9\theta)} d\theta $\\
+
+$ = \frac{e^{8\theta}\sin(9\theta)}{9} - \frac{8}{9}\int{e^{8\theta}\sin(9\theta)} d\theta $\\\\
+
+Therefore $ \int{e^{8\theta}\sin(9\theta)}d\theta $\\
+
+$ = \frac{-e^{8\theta}\cos(9\theta)}{9} + \frac{8}{9}[\frac{e^{8\theta}\sin(9\theta)}{9} - \frac{8}{9}\int{e^{8\theta}\sin(9\theta)} d\theta] $\\\\
+
+$ = \frac{-e^{8\theta}\cos(9\theta)}{9} + \frac{8}{81}e^{8\theta}\sin(9\theta) - \frac{64}{81}\int{e^{8\theta}\sin(9\theta)} d\theta $\\\\
+
+$ (1+\frac{64}{81})\int{e^{8\theta}\sin(9\theta)} d\theta = \frac{-e^{8\theta}\cos(9\theta)}{9} + \frac{8}{81}e^{8\theta}\sin(9\theta) $\\\\
+
+$ \frac{145}{81}\int{e^{8\theta}\sin(9\theta)} d\theta = \frac{-9}{81}e^{8\theta}\cos(9\theta) + \frac{8}{81}e^{8\theta}\sin(9\theta) $\\\\
+
+$ \int{e^{8\theta}\sin(9\theta)} d\theta = \frac{-9}{145}e^{8\theta}\cos(9\theta) + \frac{8}{145}e^{8\theta}\sin(9\theta) + C $\\
+
+}
+\end{document}
