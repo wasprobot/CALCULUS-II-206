@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q --- #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A --- \textbf{#1}#2\par}}
+
+\Que{ $ \int{5z^3e^{z}} dz $ }
+\Ans
+{
+Let $ u = 5z^3 $ and $ v^{\prime} = e^{z} 
+\implies u^{\prime} = 15z^2 $ and $ v = e^z $\\\\
+
+According to integration by parts:\\
+$$\int{uv^{\prime}}=uv-\int{vu^{\prime}}$$\\
+
+Therefore $ \int{5z^3e^{z}} dz 
+= 5z^3e^z - 15 \int{ z^2e^z } dz $\\\\
+
+To calculate $ \int{ z^2e^z } dz $\\
+
+Let $ u = z^2 $ and $ v^{\prime} = e^z 
+\implies u^{\prime} = 2z $ and $ v = e^z $\\
+
+Therefore $ \int{ z^2e^z } dz 
+= z^2e^z - 2 \int{ze^z} dz $\\\\
+
+To calculate $ \int{ ze^z } dz $\\
+
+Let $ u = z $ and $ v^{\prime} = e^z 
+\implies u^{\prime} = 1 $ and $ v = e^z $\\
+
+Therefore $ \int{ ze^z } dz 
+= ze^z - \int{e^z} dz 
+= (z-1)e^z $\\\\
+
+Therefore $ \int{ z^2e^z } dz 
+= z^2e^z - 2 (z-1)e^z 
+= (z^2-2z+2)e^z $\\\\
+
+Therefore $ \int{5z^3e^{z}} dz 
+= 5z^3e^z - 15(z^2-2z+2)e^z
+= (5z^3 - 15z^2 + 30z - 30)e^z + C $\\\\
+
+}
+\end{document}
