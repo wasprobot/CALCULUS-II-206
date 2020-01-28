@@ -8,11 +8,11 @@
    \leavevmode\par
    \stepcounter{question}
    \noindent
-   \thequestion. Q --- #1\par}
+   \thequestion. Q) #1\par}
 
 \newcommand\Ans[2][]{%
     \leavevmode\par\noindent
-   {A --- \textbf{#1}#2\par}}
+   {A) \textbf{#1}#2\par}}
 
 \Que{ $ \int{\cos^{-1}(x)}dx $ }
 \Ans
@@ -38,16 +38,16 @@ $$\int{uv^{\prime}}=uv-\int{vu^{\prime}}$$\\
 
 Therefore $ -\int{y\sin(y) dy} $\\
 
-$= y(-\cos(y)) - \int{-\cos(y) dy}$\\
+$= -(y(-\cos(y)) - \int{-\cos(y) dy}) $\\
 
-$= -y\cos(y) + \int{\cos(y) dy}$\\
+$= y\cos(y) - \int{\cos(y) dy}$\\
 
-$= -y\cos(y) + \sin(y) + C $\\
+$= y\cos(y) - \sin(y) + C $\\
 
-$= -\cos^{-1}(x)x + \sin(cos^{-1}(x)) + C $, 
+$= \cos^{-1}(x)x - \sin(cos^{-1}(x)) + C $, 
 (substituting $ y=cos^{-1}(x) $)\\
 
-$= -x\cos^{-1}(x) + \sqrt{1-x^2} + C $, 
+$= x\cos^{-1}(x) - \sqrt{1-x^2} + C $, 
 (substituting $ \sin(cos^{-1}(x))=sqrt{1-x^2} $)\\
 
 }
