@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q --- #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A --- \textbf{#1}#2\par}}
+
+\Que{ $ \int_{0}^{1}{ \frac{r^3}{\sqrt{16+r^2}} } dr $ }
+\Ans
+{
+Let $ u = t^2 $ and $ v^{\prime} = sin(2t) 
+\implies u^{\prime} = 2t $ and $ v = \frac{-1}{2}\cos(2t) $\\\\
+
+According to integration by parts:\\
+$$\int{uv^{\prime}}=uv-\int{vu^{\prime}}$$\\
+
+Therefore $ \int{t^2\sin(2t)} dt 
+= \frac{-t^2}{2}\cos(2t) + \int{ t\cos(2t) } dt $\\\\
+
+To calculate $ \int{ t\cos(2t) } dt $\\
+
+Let $ u = t $ and $ v^{\prime} = \cos(2t)
+\implies u^{\prime} = 1 $ and $ v = \frac{1}{2}\sin(2t) $\\
+
+Therefore $ \int{ t\cos(2t) } dt
+= \frac{t}{2}\sin(2t) - \frac{1}{2}\int{ \sin(2t) } dt
+= \frac{t}{2}\sin(2t) + \frac{1}{4}\cos(2t) $\\\\
+
+Therefore $ \int{t^2\sin(2t)} dt 
+= \frac{-t^2}{2}\cos(2t) + \frac{t}{2}\sin(2t) + \frac{1}{4}\cos(2t) + C $\\\\
+
+Therefore $ \int_{0}^{4\pi}{t^2\sin(2t)} dt $\\\\
+
+$ = \left[\frac{-t^2}{2}\cos(2t) + \frac{t}{2}\sin(2t) + \frac{1}{4}\cos(2t) \right]_{0}^{4\pi} $\\\\
+
+$ = (
+      \frac{-16\pi^2}{2}\cos(8\pi)
+      + 2\pi\sin(8\pi)
+      + \frac{1}{4}\cos(8\pi)
+   ) - (
+      0 + 0 + \frac{1}{4}\cos(0)
+   ) $\\
+
+$ = (\frac{-16\pi^2}{2} + \frac{1}{4}) 
+- (\frac{1}{4}) $\\
+
+$ = -8\pi^2 $\\
+
+}
+\end{document}
