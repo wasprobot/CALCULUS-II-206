@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    $ \int{7\sin^2(x)\cos^3(x)}dx $\\
+    }
+\Ans{
+    $ I = 7\int{sin^2(x)cos^2(x)cos(x)}dx $\\
+
+    Let $ u=\sin(x) $; $ du=\cos(x)dx $. Also $ \cos^2(x) = 1-sin^2(x) = 1-u^2 $\\
+
+    $ \implies I = 7\int{u^2(1-u^2)}du $\\
+
+    $ = 7\int{(u^2 - u^4)}du $\\
+
+    $ = \frac{7u^3}{3} - \frac{7u^5}{5} + C $\\
+
+    $ = \frac{7\sin^3(x)}{3} - \frac{7\sin^5(x)}{5} + C $\\
+}
+\Que{
+    $ \int{19\sin^2(x)\cos^3(x)}dx $\\
+    }
+\Que{
+    $ \int_{0}^{\pi/2}{\sin^5(x)\cos^5(x)}dx $\\
+    }
+\Ans{
+    Let $ I = \int{\sin^5(x)\cos^5(x)}dx $\\
+
+    Let $ u=\sin(x) $; $ du=\cos(x)dx $. Also $ \cos^2(x) = 1-sin^2(x) = 1-u^2 $\\
+
+    $ \implies I = \int{u^5(1-u^2)^2}du $\\
+
+    $ = \int{u^5(1-2u^2+u^4)}du $\\
+
+    $ = \int{(u^5 - 2u^7 + u^9)}du = u^6/6 - u^8/4 + u^{10}/10 + C $\\
+    
+    $ = \frac{\sin^6(x)}{6} - \frac{\sin^8(x)}{4} + \frac{\sin^{10}(x)}{10} + C $\\
+
+    $ \implies \left[I\right]_0^{\pi/2} = \frac{\sin^6(\pi/2)}{6} - \frac{\sin^8(\pi/2)}{4} + \frac{\sin^{10}(\pi/2])}{10} - 0 $\\
+
+    $ = \frac{1}{6} - \frac{1}{4} + \frac{1}{10} = \frac{10-15+6}{60} = 1/60 $\\
+
+}    
+\end{document}
