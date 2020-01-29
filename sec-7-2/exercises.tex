@@ -164,8 +164,44 @@
     $ = \frac{u^7}{7} + C $\\
 
     $ = \frac{\sin^7(x)}{7} + C $\\
+}
+\Que{
+    $ \int{3t\sin^2(t)}dt $\\
+    }
+\Ans{
+    $ = 3\int{uv^{\prime}}dt $, 
+    for $ u=t, v^{\prime}=\sin^2(t) $, 
+    therefore $ u^{\prime}=1, v=\int{\sin^2(t)}dt $\\
 
+    $ v = \int{\frac{1-\cos(2t)}{2}}dt $\\
 
+    $ = \int{\frac{1}{2}}dt - \int{\frac{\cos(2t)}{2}}dt $\\
 
+    $ = \frac{t}{2} - \frac{1}{4}\sin(2t) $\\
+    
+    $ \int{vu^{\prime}} = \int{(\frac{t}{2} - \frac{1}{4}\sin(2t))}dt $\\
+
+    $ = t^2 + \frac{1}{8}\cos(2t) $\\
+
+    $ \implies \int{3t\sin^2(t)}dt $\\
+    
+    $
+    = 3\left[ 
+        t(\frac{t}{2} - \frac{1}{4}\sin(2t))
+        - (t^2 + \frac{1}{8}\cos(2t))
+        \right] $\\
+
+    $ 
+    = 3\left[ 
+        \frac{t^2}{2} - \frac{t}{4}\sin(2t)
+        - t^2 - \frac{1}{8}\cos(2t)
+        \right] $\\
+
+    $ 
+    = -3\left[ 
+        \frac{t^2}{2}
+        + \frac{t}{4}\sin(2t)
+        + \frac{1}{8}\cos(2t)
+        \right] $\\
 }
 \end{document}
