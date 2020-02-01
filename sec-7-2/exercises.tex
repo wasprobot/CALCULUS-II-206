@@ -229,10 +229,30 @@
 
     $ \implies u{^\prime} = \frac{d}{dx} \frac{\sin(x)}{\cos(x)} $\\
 
-    $ = \frac{\cos^2(x) + sin^2(x)}{\cos^2(x)} = sec^2(x) $\\
+    $ = \frac{\cos^2(x) + \sin^2(x)}{\cos^2(x)} = \sec^2(x) $\\
 
     $ \implies I = \int{2u^2} du = \frac{2}{3}u^3 + C = 
     \frac{2}{3}\tan^3(x) + C $
+}
+\Que{
+    $ \int{4\tan^3(x)\sec(x)} dx $\\
+    }
+\Ans{
+    $ = 4\int{\tan^3(x)\sec(x)} dx $\\
+    
+    $ = 4\int{\frac{\sin^3(x)}{\cos^3(x)}\frac{1}{\cos(x)}} dx $\\
 
+    $ = 4\int{\frac{\sin^3(x)}{\cos^4(x)}} dx $\\
+    
+    $ = 4\int{\frac{(1-\cos^2(x))}{\cos^4(x)}} \sin(x) dx $\\
+    
+    $ = -4\int{\frac{(1-u^2)}{u^4}} du $, 
+    for $u=\cos(x)$ and $du=-\sin(x)dx$\\
+    
+    $ = -4[-\frac{1}{3u^3} + \frac{1}{u}] + C $\\
+
+    $ = \frac{4}{3u^3} - \frac{4}{u} + C $\\
+
+    $ = \frac{4}{3\cos^3(x)} - \frac{4}{\cos(x)} + C $\\
 }
 \end{document}
