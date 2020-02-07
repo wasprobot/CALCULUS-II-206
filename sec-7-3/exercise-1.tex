@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    $ \int{\frac{x^3}{\sqrt{x^2+4}}}dx $\\
+    }
+\Ans{
+    $ \int{\frac{x^3}{\sqrt{x^2+4}}} dx = \int{\frac{x^3}{\sqrt{x^2+2^2}}}dx $\\
+
+    Let $ x=2\tan(\theta) $\\
+
+    $\therefore \sqrt{x^2+2^2} 
+    = \sqrt{2^2\tan^2(\theta)+2^2} 
+    = 2\sqrt{\tan^2(\theta)+1} 
+    = 2\sec(\theta) $\\
+
+    $ \therefore \int{\frac{x^3}{\sqrt{x^2+4}}} dx 
+    = \int{\frac{8\tan^3(\theta)}{2\sec(\theta)}} dx
+    = 4\int{\frac{\tan^3(\theta)}{\sec(\theta)}} dx $\\
+
+    $ = 4\int{\frac{\sin^3(\theta)}{\cos^2(\theta)}} dx
+    = 4\int{\frac{\sin^3(\theta)}{\cos^2(\theta)}} dx $\\
+
+
+}
+\end{document}
