@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+    \leavevmode\par
+    \stepcounter{question}
+    \noindent
+    Q.\thequestion #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+    {A) \textbf{#1}#2\par}}
+
+\Que{
+    Find the volume of a solid obtained by 
+    rotating the region bound by 
+    $y=6\sin(2x^2)$, $x=0$ and 
+    $x=\sqrt{\pi/2}$ about the y-axis.
+    }
+\Ans{
+    To find the limits, $y^{\prime} = 24x\cos(2x^2)=0$ 
+    (horizontal slope).\\
+
+    $ \implies x=0$ and $\cos(2x^2)=0 $\\
+
+    $ \implies x=0$ and $2x^2=\pi/2 
+    \implies x=\sqrt{\pi}/2 $\\
+
+    $ \implies y=0$ and $y=6\sin(\pi/2)=6 $\\
+
+    Using the ``shell method'', the volume,\\
+
+    $ V = \int_{0}^{\sqrt{\pi/2}}{ 2\pi x(6\sin(2x^2)) } dx $\\
+
+    $ = 12\pi\int_{0}^{\sqrt{\pi/2}}{ x\sin(2x^2) } dx $\\
+
+    $ = \int{ x\sin(2x^2) } dx = \frac{1}{4}\int{\sin(u)} du $ 
+    for $ u=2x^2 $ and $ du = 4xdx $\\
+
+    $ = -\frac{1}{4}\cos(u) = -\frac{1}{4}\cos(2x^2) $\\
+    
+    $ \implies V = 12\pi \left[ 
+        -\frac{1}{4}\cos(2x^2)
+    \right]_{0}^{\sqrt{\pi/2}} $\\
+
+    $ = 12\pi (
+        -\frac{1}{4}\cos(\pi)
+        +\frac{1}{4}\cos(0)
+     ) $\\
+    
+    $ = 3\pi(1+1) = 6\pi $\\
+}
+\Que{
+    Find the volume of a solid obtained by 
+    rotating the region bound by 
+    $y=5\sqrt[3]{x}$, $y=0$ and 
+    $x=1$ about the y-axis.
+    }
+\Ans{
+    Using the ``shell method'', the volume,\\
+
+    $ V = \int_{0}^{1}{ 2\pi x(5\sqrt[3]{x}) } dx $\\
+    
+    $ = 10\pi\int_{0}^{1}{ x\sqrt[3]{x} } dx $\\
+    
+    $ = 10\pi\int_{0}^{1}{ x^{\frac{4}{3}} } dx $\\
+    
+    $ = 10\pi \frac{3}{7} \left[
+        x^{\frac{7}{3}}
+    \right]_{0}^{1} $\\
+
+    $ = \frac{30\pi}{7} $\\
+}
+\Que{
+    }
+\Que{
+    Find the volume of a solid obtained by 
+    rotating the region bounded by 
+    $y=\sqrt{4x}$, $y=\frac{x^2}{4}$
+    about the y-axis.
+    }
+\Ans{
+    
+}
+\end{document}
