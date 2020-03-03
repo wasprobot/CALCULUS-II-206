@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    $ \int{\frac{\sqrt{x^2-81}}{x}}dx $\\
+    }
+\Ans{
+    Let $ x=9\sec(\theta)
+    \therefore \sec(\theta) = \frac{x}{9} $\\
+
+    Also $ dx = 9\sec(\theta)\tan(\theta) d\theta $\\
+
+    $ \sqrt{x^2-9^2} $\\
+
+    $ = \sqrt{9^2\sec^2(\theta)-9^2} $\\
+
+    $ = 9\sqrt{\sec^2(\theta)-1} $\\
+
+    $ = 9\tan(\theta) $\\
+
+    $ \therefore \int{\frac{\sqrt{x^2-9^2}}{x}} dx $\\
+
+    $ \int{\frac{9\tan(\theta)}{9\sec(\theta)}} 9\sec(\theta)\tan(\theta) d\theta $\\
+    
+    $ 9\int{tan^2(\theta)} d\theta $\\
+
+    
+    $ = -8\int{\frac{1-u^2}{u^4}} du $
+    , for $u=\cos(\theta)$
+    , $du=-\sin(\theta)d\theta $\\
+    
+    $ = 8\int{\frac{u^2-1}{u^4}} du $\\
+
+    $ = 8[\int{u^{-2}}du - \int{u^{-4}} du] $ \\
+
+    $ = 8[-\frac{1}{u} + \frac{1}{3u^3} + C] $ \\
+
+    $ = 8[\frac{1}{3u^3} -\frac{1}{u} + C] $\\
+
+    $ = \frac{8}{3u^3} -\frac{8}{u} + C $\\
+    
+    $ = \frac{8}{3\cos^3(\theta)} -\frac{8}{\cos(\theta)} + C $\\
+    
+    $ = \frac{8}{3}(\frac{\sqrt{x^2+4}}{2})^3 - 8(\frac{\sqrt{x^2+4}}{2}) + C $\\
+
+    $ = \frac{1}{3}(\sqrt{x^2+4})^3 - 4\sqrt{x^2+4} + C $\\
+}
+\end{document}
