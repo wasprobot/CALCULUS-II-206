@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    Convergent/Divergent?
+    $ \int_{-\infty}^{\infty}{11xe^{-x^2}} dx $\\
+    }
+\Ans{
+    $ 11 \left[ \int_{-\infty}^{0}{xe^{-x^2}} dx + 
+    \int_{0}^{\infty}{xe^{-x^2}} dx\right] $\\
+
+    $ = 11 \lim_{t \to \infty^{+}} \int_{t}^{0}{xe^{-x^2}} dx + 
+    11 \lim_{t \to \infty^{-}} \int_{0}^{t}{xe^{-x^2}} dx $\\
+
+    $ \int{xe^{-x^2}} dx 
+    = -\frac{1}{2} \int{e^u} du $,
+    for $ u=-x^2 $,
+    and $ xdx=-\frac{1}{2}du$\\
+
+    $ = -\frac{e^u}{2}
+    = -\frac{e^{-x^2}}{2} $\\
+
+    $ \therefore \left[-\frac{e^{-x^2}}{2}\right]_{t}^{0}
+    = -\frac{1}{2}\left[ e^{0} - e^{-t^2} \right]
+    = -\frac{1}{2}\left[ 1 - \frac{1}{e^{t^2}} \right] $\\
+
+    $ \therefore -\frac{1}{2} \lim_{t \to \infty^{+}} \left[ 1 - \frac{1}{e^{t^2}} \right] 
+    = -\frac{1}{2} \left[ 1 - 0 \right] 
+    = -\frac{1}{2} $\\
+
+}
+\end{document}

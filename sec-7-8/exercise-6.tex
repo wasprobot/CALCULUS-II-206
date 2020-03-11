@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    Convergent/Divergent?
+    $ \int_{0}^{\infty}{\frac{x^2}{\sqrt{6+x^3}}} dx $\\
+    }
+\Ans{
+    $ = \lim_{t \to \infty} \int_{0}^{t}{\frac{x^2}{\sqrt{6+x^3}}} dx $\\
+    
+    $ \int{\frac{x^2}{\sqrt{6+x^3}}} dx 
+    = \frac{1}{3} \int{\frac{du}{\sqrt{u}}} $, 
+    for $ u=6+x^3 $ and $ x^2dx = du/3 $ \\
+    
+    $ = \frac{1}{3} \int{u^{-1/2}} du 
+    = \frac{u^{1/2}}{3/2} + C
+    = \frac{2\sqrt{u}}{3} + C
+    = \frac{2\sqrt{6+x^3}}{3} + C $\\
+    
+    $ \therefore \left[ \frac{2\sqrt{6+x^3}}{3} + C \right]_{0}^{t} $\\
+    
+    $ = \left[ \frac{2\sqrt{6+t^3}}{3} - \frac{2\sqrt{6}}{3} \right] $\\
+    
+    $ \therefore \lim_{t \to \infty} \left[ \frac{2\sqrt{6+t^3}}{3} - \frac{2\sqrt{6}}{3} \right] $\\
+
+    $ = \lim_{t \to \infty} \left[ \frac{2\sqrt{6+t^3}}{3} \right] - \frac{2\sqrt{6}}{3} $\\
+    
+    $ = \infty $\\
+}
+\end{document}
