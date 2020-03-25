@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    Find the exact length of the curve
+    $ f(x) = \frac{x^2}{2}, P = (-3, \frac{9}{2}), Q = (3, \frac{9}{2}) $\\
+    }
+\Ans{
+    $ L = \int_{-3}^{3} {\sqrt{1+[f^{\prime}(x)]^2}} dx $\\
+    
+    $ f^{\prime}(x) = \frac{2x}{2} = x $\\
+
+    $ L = \int_{-3}^{3} {\sqrt{1+x^2}} dx $\\
+    
+    $
+    \int{\sqrt{1+x^2}} dx
+    = \int{\sqrt{1+(\tan{\theta})^2}} (\sec{\theta})^2 d\theta
+    $\\
+
+    for $
+    x = \tan{\theta},
+    dx = (\sec{\theta})^2 d\theta
+    $\\
+
+    $
+    \int{\sqrt{1+x^2}} dx
+    = \int{\sqrt{1+(\tan{\theta})^2}} (\sec{\theta})^2 d\theta
+    = \int{(sec{\theta})^3} d\theta
+    $\\
+
+    $
+    = \int{\frac{1}{(\cos{\theta})^2} \frac{1}{\cos{\theta}} } d\theta
+    $\\
+
+    (applying integration by parts $ \int{u.dv} = u.v - \int{v.du} $),\\
+
+    $
+    = \sec{\theta}\tan{\theta} 
+    - \int{\sec{\theta}(\tan{\theta})^2} d\theta
+    $\\
+    
+    (for $
+    u = \frac{1}{\cos{\theta}},
+    dv = \frac{1}{(\cos{\theta})^2}
+    $
+    and $
+    du = \sec{\theta}\tan{\theta}d\theta,
+    v = \tan{\theta}
+    $)\\
+
+    $
+    \implies \int{(\sec{\theta})^3}d{\theta}
+    = \sec{\theta}\tan{\theta}
+    - \int{(\sec{\theta})^3(\sin{\theta})^2} d\theta
+    $\\
+
+    $
+    = \sec{\theta}\tan{\theta}
+    - \int{(\sec{\theta})^3(1 - \cos{\theta})^2} d\theta
+    $\\
+
+    $
+    = \sec{\theta}\tan{\theta}
+    - \int{(\sec{\theta})^3} d{\theta} 
+    + \int{\sec{\theta}} d\theta
+    $\\
+
+    $
+    = \sec{\theta}\tan{\theta}
+    - \int{(\sec{\theta})^3} d{\theta} 
+    + \ln|\sec{\theta} + \tan{\theta}|
+    $\\
+
+    $
+    \implies 2\int{(\sec{\theta})^3}d{\theta}
+    = \sec{\theta}\tan{\theta}
+    + \ln|\sec{\theta} + \tan{\theta}|
+    $\\
+    
+    $
+    \implies \int{(\sec{\theta})^3}d{\theta}
+    = \frac{1}{2}[
+        \sec{\theta}\tan{\theta}
+        + \ln|\sec{\theta} + \tan{\theta}|
+        ]
+    $\\
+    
+    
+    $
+    = \frac{1}{2}[
+        \sec{\theta}\tan{\theta}
+        + \ln|\sec{\theta} + \tan{\theta}|
+        ]
+        $\\
+
+    $ \implies L 
+    = \frac{1}{2} \left[
+        \sec{\theta}\tan{\theta}
+        + \ln|\sec{\theta} + \tan{\theta}|
+    \right]_{x=-3}^{x=3}
+    $\\
+
+    For $ x=\pm{3} $, $\tan{\theta}=\pm{3}, \sec{\theta}=\sqrt{10}$\\
+    
+    $ \implies L 
+    = \frac{1}{2} \left[
+        3\sqrt{10} + \ln|\sqrt{10} + 3|
+        -(-3\sqrt{10} + \ln|\sqrt{10} - 3|)
+    \right]$\\
+
+    $
+    = 3\sqrt{10} +  \frac{1}{2}\ln(\frac{\sqrt{10} + 3}{\sqrt{10} - 3})
+    $\\
+
+    }
+\end{document}
