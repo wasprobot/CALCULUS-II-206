@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{3}
+\begin{document}
+
+\newcommand\Que[1]{%
+    \leavevmode\par
+    \stepcounter{question}
+    \noindent
+    Q.\thequestion #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+    {A) \textbf{#1}#2\par}}
+
+\Que{
+    Find the volume of a solid obtained by 
+    rotating the region bounded by 
+    $y=x^3, y=8, x=0$ about $x=5$.
+    }
+\Ans{
+    The curves are:\\
+    $y=x^3$ and\\
+    $y=8$\\
+    
+    Intersection points:\\
+    $x=2, y=8$ and\\
+    $x=5, y=125$\\
+    
+    The curcumference of a cylinder
+    $=2\pi(5-x)$\\
+
+    The height of a cylinder
+    $=8-x^3$\\
+
+    Volume of a cylinder
+    $=2\pi(5-x)(8-x^3)dx$\\
+
+    Total volume:\\
+    \begin{align}        
+        V & = \int_0^2{2\pi(5-x)(8-x^3)} dx\\
+        & = 2\pi \int_0^2{(40-5x^3-8x+x^4)} dx\\
+        & = 2\pi \left[
+            40x-\frac{5x^4}{4}-4x^2+\frac{x^5}{5}
+        \right]_0^2\\
+        & = 2\pi \left[
+            80-\frac{(5)2^4}{4}-(4)2^2+\frac{2^5}{5}
+        \right]\\
+        & = 2\pi \left[
+            44+\frac{32}{5}
+        \right]\\
+        & = \frac{504\pi}{5}\\
+    \end{align}
+
+    The volume of the lower curve,\\
+    \begin{align}        
+        V_2 & = 72\pi\\
+    \end{align}
+}
+\end{document}
