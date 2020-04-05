@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    Convergent/Divergent?
+    $ \int_{2}^{\infty}{\frac{1}{x^2+x}} dx $\\
+    }
+\Ans{
+    Let
+    \begin{align*}
+        I & = \int{\frac{1}{x^2+x}} dx\\
+        & = \int{\frac{1}{x}} dx - \int{\frac{1}{1+x}} dx\\
+        & = \ln|x| - \ln|1+x| + C\\
+    \end{align*}\\
+
+    Therefore $[I]_2^{\infty} = [\ln|x| - \ln|1+x|]_2^{\infty}$\\
+    
+    $ = [\ln|\infty| - \ln|\infty| - \ln|2| + \ln|3|] = \ln(3/2)$\\
+}
+\end{document}
