@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    Convergent/Divergent?
+    $ \int_{-2}^{14}{\frac{14}{
+        \sqrt[\leftroot{-2}\uproot{2}4]{x+2}
+        }
+    } dx $\\
+    }
+\Ans{
+    Let
+    \begin{align*}
+        I & = \int_{-2}^{14}{\frac{14}{
+            \sqrt[\leftroot{-2}\uproot{2}4]{x+2}
+            }
+        } dx\\
+        I_1 & = \int{\frac{14}{
+            \sqrt[\leftroot{-2}\uproot{2}4]{x+2}
+            }
+        } dx\\
+        & = 14 \int{({x+2})^{-\frac{1}{4}}} dx\\
+        & = 14 \frac{({x+2})^{1-\frac{1}{4}}}{1-\frac{1}{4}}\\
+        & = 14 \frac{({x+2})^{\frac{3}{4}}}{\frac{3}{4}}\\
+        & = \frac{56}{3} (x+2)^{\frac{3}{4}}\\
+        I & = \frac{56}{3} \left[
+            (x+2)^{\frac{3}{4}}
+        \right]_{-2}^{14}\\
+        & = \frac{56}{3} \left[
+            16^{\frac{3}{4}} - 0
+        \right]\\
+        & = \frac{448}{3}
+    \end{align*}
+}
+\end{document}
