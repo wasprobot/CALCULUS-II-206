@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    Convergent/Divergent?
+    $ \int_{-\infty}^{0}{\frac{z}{z^4+36}} dz $\\
+    }
+\Ans{
+    Let
+    \begin{align*}
+        I & = \int{\frac{z}{z^4+36}} dz\\
+        & = \int{\frac{z}{(z^2)^2+6^2}} dz\\
+        & = \frac{1}{2} \int{\frac{1}{u^2+6^2}} du
+        && \text{
+            for $u=z^2, du=2zdz$
+            }\\
+        I_1 & = \int{\frac{1}{u^2+6^2}} du\\
+        & = \int{\frac{6\sec^2(\theta)}{6^2\tan^2(\theta)+6^2}} d\theta
+        && \text{
+            for $u=6\tan(\theta)$,
+            $du=6\sec^2(\theta)d\theta$
+            }\\
+        & = \frac{1}{6} \int{\frac{\sec^2(\theta)}{\tan^2(\theta)+1}} d\theta\\
+        & = \frac{1}{6} \int{}d\theta 
+        = \frac{1}{6} \theta + C_1 
+        = \frac{1}{6} \arctan(\frac{u}{6}) + C_2\\
+        I & = \frac{1}{12} \arctan(\frac{u}{6}) + C\\
+        & = \frac{1}{12} \arctan(\frac{z^2}{6}) + C\\
+        \left[ I \right]_{-\infty}^0
+            & = \frac{1}{12} \lim_{t \to {-\infty}} \left[ 
+                \arctan(\frac{z^2}{6}) 
+            \right]_{t}^0\\
+            & = \frac{1}{12} \lim_{t \to {-\infty}} \left[ 
+                0 - \arctan(\frac{t^2}{6}) 
+            \right]\\
+            & = \frac{1}{12} \left[ 
+                0 - (\frac{\pi}{2})
+            \right]
+            && \text{since $\lim_{t \to {-\infty}}t^2 = \infty$ and $\arctan(\infty) = \frac{\pi}{2}$}\\
+            & = \boxed{- \frac{\pi}{24}}
+    \end{align*}
+}
+\end{document}
