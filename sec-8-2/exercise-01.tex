@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    Surface area of rvolution:\\
+
+    $ y = \sqrt{6-x}, 4 \le x \le 6 $\\
+    }
+\Ans{
+    \begin{align*}
+        S & = \int_a^b{2\pi f(x) \sqrt{1+[f^{\prime}(x)^2]}} dx\\
+        f & = (6-x)^{1/2}\\
+        f^{\prime} & = -\frac{1}{2\sqrt{6-x}}\\
+        S & = \int_4^6{2\pi 
+            (6-x)^{1/2} 
+            \sqrt{1+(-\frac{1}{2\sqrt{6-x}})^2}} dx\\
+        & = 2\pi \int_4^6{
+            (6-x)^{1/2} 
+            \sqrt{1+\frac{1}{4(6-x)}}} dx\\
+        & = 2\pi \int_4^6{
+            (6-x)^{1/2} 
+            \sqrt{\frac{25-4x}{4(6-x)}}} dx\\
+        & = \pi \int_4^6{ \sqrt{25-4x}} dx\\
+        \text{Let } I & = \int{ \sqrt{25-4x} } dx\\
+        & = \frac{-1}{4} \int{ \sqrt{u} } du
+            && \text{(for $u=25-4x$ and $du=-4dx$)}\\
+        & = \frac{-1}{6} u^{3/2}\\
+        & = \frac{-1}{6} (25-4x)^{3/2}\\
+        S & = \frac{-\pi}{6} \left[
+            (25-4x)^{3/2}
+        \right ]_4^6\\
+        & = \frac{-\pi}{6} \left[
+            (25-24)^{3/2} - (25-16)^{3/2}
+        \right ]\\
+        & = \frac{-\pi}{6} \left[
+            1 - (9)^{3/2}
+        \right ]\\
+        & = \frac{\pi}{6} \left[
+            27-1
+        \right ]\\
+        & = \boxed{\frac{13\pi}{3}}\\
+    \end{align*}
+}
+\end{document}
