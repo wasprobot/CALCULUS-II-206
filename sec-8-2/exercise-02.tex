@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    Surface area of rvolution:\\
+
+    $ y = \sqrt{1+e^x}, 0 \le x \le 3 $\\
+    }
+\Ans{
+    \boxed{S = \int_a^b{2\pi f(x) \sqrt{1+[f^{\prime}(x)^2]}} dx}\\
+    \begin{align*}
+        f & = (1+e^x)^{1/2}\\
+        f^{\prime} & = \frac{e^x}{2\sqrt{1+e^x}}\\
+        S & = \int_0^3{
+            2\pi 
+            (1+e^x)^{1/2}
+            \sqrt{1+(
+                \frac{e^x}{2\sqrt{1+e^x}}
+                )^2}
+            } dx\\
+        & = 2\pi \int_0^3{
+            (1+e^x)^{1/2}
+            \sqrt{1+
+                \frac{e^{2x}}{4(1+e^x)}
+                }
+            } dx\\
+        & = \pi \int_0^3{
+            \sqrt{
+                4(1+e^x) + e^{2x}
+                }
+            } dx\\
+        & = \pi \int_0^3{
+            \sqrt{
+                2^2+2.2.e^x + {e^x}^2
+                }
+            } dx
+        = \pi \int_0^3{
+            (2 + e^x)
+            } dx\\
+        & = \pi \left[
+            2x + e^x
+            \right]_0^3\\
+        & = \pi \left[
+            6 + e^3
+            - 0 - e^0
+            \right]\\
+        & = \pi \left[
+            5 + e^3
+            \right]\\
+    \end{align*}
+}
+\end{document}
