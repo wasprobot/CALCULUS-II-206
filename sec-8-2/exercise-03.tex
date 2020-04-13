@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\newcounter{question}
+\setcounter{question}{0}
+\begin{document}
+
+\newcommand\Que[1]{%
+   \leavevmode\par
+   \stepcounter{question}
+   \noindent
+   \thequestion. Q) #1\par}
+
+\newcommand\Ans[2][]{%
+    \leavevmode\par\noindent
+   {A) \textbf{#1}#2\par}}
+
+\Que{
+    Surface area of rvolution:\\
+
+    $ y = \frac{x^3}{3}+\frac{1}{4x}, \frac{1}{2} \le x \le 1 $\\
+    }
+\Ans{
+    \begin{align*}
+        S & = \int_a^b{2\pi f(x) \sqrt{1+[f^{\prime}(x)^2]}} dx\\
+        f & = \frac{x^3}{3}+\frac{1}{4x}\\
+        f^{\prime} & = x^2-\frac{1}{4x^2}
+        = \frac{4x^4-1}{4x^2}\\
+        S & = \int_{\frac{1}{2}}^1{2\pi 
+            (\frac{x^3}{3}+\frac{1}{4x})
+            \sqrt{1+(\frac{4x^4-1}{4x^2})^2}} dx\\
+        & = 2\pi \int_{\frac{1}{2}}^1{
+            \frac{4x^4+3}{12x}
+            \frac{\sqrt{16x^4+16x^8+1-8x^4}}{4x^2}
+            } dx\\
+        & = 2\pi \int_{\frac{1}{2}}^1{
+            \frac{4x^4+3}{12x}
+            \frac{\sqrt{8x^4+16x^8+1}}{4x^2}
+            } dx\\
+        & = 2\pi \int_{\frac{1}{2}}^1{
+            \frac{(4x^4+3)(4x^4+1)}{48x^3}
+            } dx\\
+        & = 2\pi \int_{\frac{1}{2}}^1{
+            \frac{(16x^8+16x^4+3)}{48x^3}
+            } dx\\
+        & = 2\pi \int_{\frac{1}{2}}^1{
+            (\frac{x^5}{3}
+            +\frac{x}{3}
+            +\frac{1}{16x^3})
+            } dx\\
+        & = 2\pi \left[
+            \frac{x^6}{18}
+            +\frac{x^2}{6}
+            -\frac{1}{32x^2}
+            \right]_{\frac{1}{2}}^1\\
+        & = 2\pi \left[
+            \frac{1}{18}
+            +\frac{1}{6}
+            -\frac{1}{32}
+            - (\frac{1}{18.64}
+            +\frac{1}{24}
+            -\frac{1}{8})
+            \right]\\
+        & = 2\pi \left[
+            \frac{16+48-9}{288}
+            -
+            (\frac{1+48-144}{1152})
+            \right]
+        = 2\pi \left[
+            \frac{55}{288}
+            +
+            \frac{95}{1152}
+            \right]
+        = 2\pi \left[
+            \frac{55.4 + 95}{1152}
+            \right]\\
+        & = 2\pi \left[
+            \frac{315}{1152}
+            \right]\\
+        & = \frac{105\pi}{192}
+    \end{align*}
+}
+\end{document}
